@@ -1,12 +1,12 @@
 # color_extract
-[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) ![Build status](https://github.com/itisnajim/color_extract/workflows/Build/badge.svg?branch=main") [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/master/graph/badge.svg)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub stars](https://img.shields.io/github/stars/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/stargazers) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
+[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) [![Build](https://github.com/itisnajim/color_extract/workflows/build.yml/badge.svg)](https://github.com/itisnajim/color_extract/actions) [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/main/graph/badge.svg?token=DQTMJA22JQ)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub stars](https://img.shields.io/github/stars/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/stargazers) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
 
 Color Extract is a Flutter package that allows you to extract and calculate colors from your app's background.
 
 Preview
 ------------
 
-https://raw.githubusercontent.com/itisnajim/color_extract/main/readme/preview.mp4
+https://user-images.githubusercontent.com/44414626/220677525-30942250-ceb2-4e85-a8af-1cb2317e4ed5.mp4
 
 Demo
 ------------

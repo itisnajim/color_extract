@@ -1,4 +1,4 @@
-name: Flutter Workflow
+name: Main
 
 on: [push, workflow_dispatch]
 jobs:
