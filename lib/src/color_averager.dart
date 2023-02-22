@@ -47,7 +47,7 @@ class ColorAverager extends StatefulWidget {
   final Color? fillerColor;
 
   @override
-  _ColorAveragerState createState() => _ColorAveragerState();
+  State<ColorAverager> createState() => _ColorAveragerState();
 }
 
 class _ColorAveragerState extends State<ColorAverager> {
