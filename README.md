@@ -1,5 +1,5 @@
 # color_extract
-[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) [![Build](https://github.com/itisnajim/color_extract/workflows/build.yml/badge.svg)](https://github.com/itisnajim/color_extract/actions) [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/main/graph/badge.svg?token=DQTMJA22JQ)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub stars](https://img.shields.io/github/stars/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/stargazers) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
+[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) [![Build](https://github.com/itisnajim/color_extract/workflows/Main/badge.svg)](https://github.com/itisnajim/color_extract/actions) [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/main/graph/badge.svg?token=DQTMJA22JQ)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub stars](https://img.shields.io/github/stars/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/stargazers) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
 
 Color Extract is a Flutter package that allows you to extract and calculate colors from your app's background.
 
@@ -10,6 +10,7 @@ https://user-images.githubusercontent.com/44414626/220677525-30942250-ceb2-4e85-
 
 Demo
 ------------
+in this demo you can see how you can make your widget behave like a Chameleon 🦎
 
 ![demo](https://raw.githubusercontent.com/itisnajim/color_extract/main/readme/example-demo.gif)
 
@@ -74,8 +75,6 @@ final controller = ColorAveragerController();
 final avgColor = await controller.calculateAvgColor();
 ```
 
-This package is useful when you need to extract and manipulate the average extracted color in real-time and programmatically.
-
 Example
 -------
 
@@ -87,9 +86,6 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Color Extract Example'),
-      ),
       body: Stack(
         children: [
           ColorExtractor(
