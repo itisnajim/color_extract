@@ -1,0 +1,11 @@
+include: package:flutter_lints/flutter.yaml
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+linter:
+  rules:
+    - lines_longer_than_80_chars
+analyzer:
+  errors:
+    lines_longer_than_80_chars: warning
