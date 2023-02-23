@@ -1,6 +1,6 @@
 name: color_extract
 description: A Flutter package that extract the average color of a widget's background.
-version: 1.0.1
+version: 1.0.1+1
 homepage: https://github.com/itisnajim/color_extract
 
 environment:
