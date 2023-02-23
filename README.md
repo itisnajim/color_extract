@@ -8,6 +8,7 @@ You can use it to change the color of a widget depending/based on the color of t
 Preview
 ------------
 (Video player may not show on pub.dev, check github.com)
+
 https://user-images.githubusercontent.com/44414626/220677525-30942250-ceb2-4e85-a8af-1cb2317e4ed5.mp4
 
 Demo
