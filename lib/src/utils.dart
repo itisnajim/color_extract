@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+/// Converts an ABGR color format to ARGB by swapping R and B values.
 int abgrToArgb(int argbColor) {
   int r = (argbColor >> 16) & 0xFF;
   int b = argbColor & 0xFF;
@@ -46,6 +47,9 @@ class GrayscaleFilter extends StatelessWidget {
   }
 }
 
+/// Inverts the RGB values of the input color and sets the alpha value to
+/// 255 (fully opaque) to produce the resulting color.
+/// The input color should have an alpha value of 255.
 Color reverseColor(Color color) {
   return Color((0xFFFFFFFF - color.value) | 0xFF000000);
 }
@@ -59,6 +63,8 @@ extension ColorExt on Color {
     return hslColor.withLightness(lightness).toColor();
   }
 
+  // Returns a new color by reversing the color value
+  // of the current [Color] instance.
   Color get reverse => reverseColor(this);
 }
 
@@ -71,18 +77,17 @@ extension ColorExt on Color {
 Color moreVisibleColor(
   Color foregroundColor,
   Color backgroundColor, [
-  double percent = 0.2,
+  // percent is the desired brightness diff.
+  double percent = 0.4,
 ]) {
   final foregroundLuminance = foregroundColor.computeLuminance();
   final backgroundLuminance = backgroundColor.computeLuminance();
   final brightnessDiff = foregroundLuminance - backgroundLuminance;
 
-  if (brightnessDiff.abs() >= 0.4) return foregroundColor;
+  if (brightnessDiff.abs() >= percent) return foregroundColor;
 
-  const desiredBrightnessDiff = 0.4;
   final sign = brightnessDiff.isNegative ? -1 : 1;
-  final newBrightness =
-      min(max(0, foregroundLuminance + sign * desiredBrightnessDiff), 1);
+  final newBrightness = min(max(0, foregroundLuminance + sign * percent), 1);
   return foregroundColor.withLightness(newBrightness.toDouble());
 }
 
@@ -100,6 +105,8 @@ Color enforceColor(Color color, [double percent = 0.2]) {
   return color.withLightness(newBrightness);
 }
 
+/// Returns a random color generated using the dart:math library. The color
+/// has an alpha value of 255 and random red, green, and blue values.
 Color getRandomColor() {
   final random = Random();
   return Color.fromARGB(

@@ -1,3 +1,10 @@
+## 1.0.1
+
+* Added unit tests to improve code quality and ensure functionality.
+* Updated README file to provide clearer instructions and information about the package.
+* Added documentation (comments) throughout the code to make it easier for others to understand and use.
+
+
 ## 1.0.0
 
 * Initial release of the color_extract package.

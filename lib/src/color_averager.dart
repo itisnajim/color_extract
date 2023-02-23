@@ -3,21 +3,11 @@ import 'package:flutter/rendering.dart';
 
 import 'utils.dart';
 
-/// A widget that calculates the average color from the intersection between
-/// its child and a specified `RepaintBoundary` widget (GlobalKey boundaryKey).
+/// This widget calculates the average color of the overlapping area between
+/// its child and a specified ColorExtractor or RepaintBoundary widget,
+/// identified by its GlobalKey boundaryKey.
 class ColorAverager extends StatefulWidget {
-  /// Creates a `ColorAverager` widget.
-  ///
-  ///   The `boundaryKey` parameter must be the same `GlobalKey` object
-  /// used in the `RepaintBoundary` widget that is being intersected.
-  ///   The `child` parameter is the child widget whose intersection with
-  /// the `RepaintBoundary` widget will be used to calculate the average color.
-  ///   The `onChanged` parameter is a callback function that will be called
-  /// whenever the average color changes.
-  ///   The `controller` parameter is an optional `ColorAveragerController`
-  /// object that can be used to programmatically calculate the average color.
-  ///   The `fillerColor` parameter is an optional color to use for pixels
-  /// with an alpha value of 0.
+  /// Creates a new ColorAverager widget.
   const ColorAverager({
     Key? key,
     required this.boundaryKey,
@@ -28,15 +18,16 @@ class ColorAverager extends StatefulWidget {
   })  : assert(onChanged != null || controller != null),
         super(key: key);
 
-  /// The `GlobalKey` object used to identify
-  /// the `RepaintBoundary` widget being intersected.
+  /// The `GlobalKey` of the `RepaintBoundary` or `ColorExtractor` widget
+  /// to calculate the average color from.
   final GlobalKey boundaryKey;
 
   /// The child widget whose intersection with
-  /// the `RepaintBoundary` widget will be used to calculate the average color.
+  /// the `RepaintBoundary` or `ColorExtractor` widget will be used
+  /// to calculate the average color.
   final Widget child;
 
-  /// The callback that will be called whenever the average color changes.
+  /// The callback function that returns the calculated average color.
   final ValueChanged<Color?>? onChanged;
 
   /// An optional `ColorAveragerController` object that can be used
@@ -59,7 +50,7 @@ class _ColorAveragerState extends State<ColorAverager> {
     super.initState();
     widget.controller?._addState(this);
 
-    // Calculate the initial average color after the first frame is painted.
+    // Calculate the initial average color.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 500), _calculateAvgColor);
     });

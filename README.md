@@ -1,16 +1,18 @@
 # color_extract
-[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) [![Build](https://github.com/itisnajim/color_extract/workflows/Main/badge.svg)](https://github.com/itisnajim/color_extract/actions) [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/main/graph/badge.svg?token=DQTMJA22JQ)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub stars](https://img.shields.io/github/stars/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/stargazers) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
+[![pub package](https://img.shields.io/pub/v/color_extract.svg)](https://pub.dartlang.org/packages/color_extract) [![Build](https://github.com/itisnajim/color_extract/workflows/Main/badge.svg)](https://github.com/itisnajim/color_extract/actions) [![codecov](https://codecov.io/gh/itisnajim/color_extract/branch/main/graph/badge.svg?token=DQTMJA22JQ)](https://codecov.io/gh/itisnajim/color_extract) [![GitHub license](https://img.shields.io/github/license/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/blob/master/LICENSE)  [![GitHub issues](https://img.shields.io/github/issues/itisnajim/color_extract)](https://github.com/itisnajim/color_extract/issues)
 
-Color Extract is a Flutter package that allows you to extract and calculate colors from your app's background.
+Color Extract is a Flutter package that allows you to extract and calculate colors from your app's widgets.
+You can use it to change the color of a widget depending/based on the color of the background (the other widget behind).
+
 
 Preview
 ------------
-
+(Video player may not show on pub.dev, check github.com)
 https://user-images.githubusercontent.com/44414626/220677525-30942250-ceb2-4e85-a8af-1cb2317e4ed5.mp4
 
 Demo
 ------------
-in this demo you can see how you can make your widget behave like a Chameleon 🦎
+In this demo see how you can make your widget change colors like a chameleon 🦎.
 
 ![demo](https://raw.githubusercontent.com/itisnajim/color_extract/main/readme/example-demo.gif)
 
@@ -22,7 +24,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  color_extract: ^1.0.0
+  color_extract: ^1.0.1
 ```
 
 Then run `flutter pub get`.
@@ -32,9 +34,7 @@ Usage
 
 ### ColorExtractor
 
-The `ColorExtractor` it's the widget we want to extract the average color from. 
-It's a wrapper for RepaintBoundary so you can use `RepaintBoundary` also instead.
-
+The `ColorExtractor` it's the widget we want to extract the average color from. It serves as a wrapper for RepaintBoundary, so you can utilize RepaintBoundary as an alternative.
 
 ```dart
 ColorExtractor(
@@ -49,8 +49,7 @@ ColorExtractor(
 
 ### ColorAverager
 
-The `ColorAverager` widget calculates the average color of a part of the `ColorExtractor` or `RepaintBoundary`. It can be used to determine the overall color of a region of `ColorExtractor` or `RepaintBoundary`, such as the area behind a logo or an image.
-
+The `ColorAverager` widget computes the average color of a specific portion of either `ColorExtractor` or `RepaintBoundary`. Its application is useful in determining the dominant color of a certain area, such as the background behind a logo, image.
 
 ```dart
 ColorAverager(
@@ -99,6 +98,8 @@ class MyHomePage extends StatelessWidget {
           ColorAverager(
             // boundaryKey should be the same one in the above ColorExtractor boundaryKey
             boundaryKey: boundaryKey,
+            // You can use the controller (ColorAveragerController) too.
+            // controller: controller,
             child: const SizedBox(width: 50, height: 50),
             onChanged: (color) {
                 // Do something with the average color.
@@ -111,3 +112,11 @@ class MyHomePage extends StatelessWidget {
   }
 }
 ```
+
+## Author
+
+itisnajim, itisnajim@gmail.com
+
+## License
+
+color_extract is available under the MIT license. See the LICENSE file for more info.

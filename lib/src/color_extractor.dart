@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// A widget that extracts the average color from a rectangular area defined by
-/// the [boundaryKey] in its child's widget tree.
-///
-/// The [boundaryKey] specifies the key of widget that delimits the rectangular
-/// area where the color should be extracted. This widget should be a descendant
-/// of the [child] widget. If the [boundaryKey] is not found in the widget tree
-/// below the [child] widget, an exception will be thrown.
-///
-/// The average color of the pixels inside the rectangular area is computed and
-/// returned as a [Color] object.
+/// A widget that wraps its child with a [RepaintBoundary] widget and
+/// provides a [GlobalKey] to the boundary. This allows you to extract the
+/// colors from the widget using [ColorAverager].
 class ColorExtractor extends StatelessWidget {
   const ColorExtractor({
     Key? key,
@@ -17,12 +10,11 @@ class ColorExtractor extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
-  /// The child widget that contains the rectangular area from which the color
-  /// should be extracted.
+  /// The child widget whose color is to be extracted.
   final Widget child;
 
-  /// The key of the widget that delimits the rectangular area from which the
-  /// color should be extracted.
+  /// A global key that references the [RepaintBoundary] widget
+  /// to be used in calculating the average color.
   final GlobalKey boundaryKey;
 
   @override
